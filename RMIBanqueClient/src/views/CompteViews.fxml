@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="886.0" styleClass="valider" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CompteViewsController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="874.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Fichier">
+               <items>
+                  <MenuItem fx:id="menu_Add_Cpt" mnemonicParsing="false" onAction="#onMenuAddCpt" text="Nouveau compte" />
+                  <MenuItem fx:id="menu_actualiser" mnemonicParsing="false" onAction="#onMenuActualiser" text="Actualiser" />
+                  <MenuItem fx:id="menu_Exit" mnemonicParsing="false" onAction="#onMenuExit" text="Quitter" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edition">
+               <items>
+                  <MenuItem fx:id="menu_depot" mnemonicParsing="false" onAction="#onMenuDepot" text="Ajouter une somme" />
+                  <MenuItem fx:id="menu_retrait" mnemonicParsing="false" onAction="#onMenuRetrait" text="Retirer une somme" />
+                  <MenuItem mnemonicParsing="false" text="lister toutes les opérations" />
+                  <MenuItem fx:id="menu_del_Cpt" mnemonicParsing="false" onAction="#onMenuDelCpt" text="Supprimer compte bancaire" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Aide">
+               <items>
+                  <MenuItem fx:id="menu_about" mnemonicParsing="false" onAction="#onMenuAbout" text="Apropos" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Preferences" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Button fx:id="btn_list_op" layoutX="479.0" layoutY="496.0" mnemonicParsing="false" onAction="#act_btn_list_op" style="-fx-background-color: #68aeff;" text="Liste des opérations" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ScrollPane layoutX="245.0" layoutY="145.0" prefHeight="311.0" prefWidth="633.0">
+         <content>
+            <AnchorPane prefHeight="299.0" prefWidth="620.0">
+               <children>
+                  <TableView fx:id="table_cpt" layoutX="-1.0" layoutY="71.0" onMouseClicked="#select_model" prefHeight="311.0" prefWidth="633.0" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-12.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="col_cptno" prefWidth="110.0" text="NUMERO" />
+                      <TableColumn fx:id="col_nom" prefWidth="81.0" text="NOM" />
+                        <TableColumn fx:id="col_prenom" prefWidth="144.0" text="PRENOM" />
+                        <TableColumn fx:id="col_solde" prefWidth="160.0" text="SOLDE" />
+                        <TableColumn fx:id="col_date_creation" prefWidth="137.0" text="DATE DE CREATION" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutX="259.0" layoutY="95.0" prefHeight="25.0" prefWidth="602.0" style="-fx-background-color: #03d9ff;">
+         <children>
+            <Label layoutX="197.0" layoutY="6.0" text="LISTE DES COMPTES" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txt_nom" layoutX="25.0" layoutY="205.0" prefHeight="25.0" prefWidth="202.0" promptText="Nom du client" />
+      <TextField fx:id="txt_prenom" layoutX="25.0" layoutY="248.0" prefHeight="25.0" prefWidth="202.0" promptText="Prenom du client" />
+      <TextField fx:id="txt_pass" layoutX="25.0" layoutY="333.0" prefHeight="25.0" prefWidth="202.0" promptText="Mot de passe" />
+      <Button fx:id="btn_valider" layoutX="51.0" layoutY="408.0" mnemonicParsing="false" onAction="#act_btn_valider" prefHeight="29.0" prefWidth="149.0" style="-fx-background-radius: 5px/5px; -fx-background-color: green; -fx-cursor: hand;" text="Valider" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="3.0" layoutY="95.0" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: #03d9ff;">
+         <children>
+            <Label fx:id="label_state" layoutX="10.0" layoutY="7.0" text="COMPTE" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txt_search" layoutX="660.0" layoutY="42.0" onKeyReleased="#onKeyReleasedSearch" promptText="Recherche" />
+      <TextField fx:id="txt_solde" layoutX="25.0" layoutY="291.0" prefHeight="25.0" prefWidth="202.0" promptText="Solde" />
+   </children>
+</AnchorPane>
